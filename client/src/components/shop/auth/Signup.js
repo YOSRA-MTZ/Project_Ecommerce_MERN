@@ -6,16 +6,18 @@ const Signup = (props) => {
     name: "",
     email: "",
     password: "",
-    cPassword: "",
+    cPassword: "", 
+    isAdmin: false,
     error: false,
     loading: false,
     success: false,
+   
   });
 
   const alert = (msg, type) => (
     <div className={`text-sm text-${type}-500`}>{msg}</div>
   );
-  const [isAdmin, setIsAdmin] = useState(false);
+
   const formSubmit = async () => {
     setData({ ...data, loading: true });
     if (data.cPassword !== data.password) {
@@ -33,8 +35,9 @@ const Signup = (props) => {
         email: data.email,
         password: data.password,
         cPassword: data.cPassword,
-        isAdmin: isAdmin,
+        isAdmin: data.isAdmin, // Assurez-vous que ceci est inclus
       });
+      
       if (responseData.error) {
         setData({
           ...data,
@@ -42,6 +45,7 @@ const Signup = (props) => {
           error: responseData.error,
           password: "",
           cPassword: "",
+          
         });
       } else if (responseData.success) {
         setData({
@@ -50,6 +54,7 @@ const Signup = (props) => {
           email: "",
           password: "",
           cPassword: "",
+          isAdmin: false,
           loading: false,
           error: false,
         });
@@ -169,16 +174,17 @@ const Signup = (props) => {
           </a>
         </div>
         <div className="flex flex-col">
-          <label htmlFor="isAdmin">Sign up as Admin</label>
-          <input
-            type="checkbox"
-            id="isAdmin"
-            checked={isAdmin}
-            onChange={(e) => setIsAdmin(e.target.checked)}
-            className="px-4 py-2 focus:outline-none border"
-          />
-        </div>
-       
+  <label htmlFor="isAdmin">Admin</label>
+  <input
+  type="checkbox"
+  id="isAdmin"
+  checked={data.isAdmin} // This should be controlled by state
+  onChange={(e) => setData({ ...data, isAdmin: e.target.checked })}
+  className="px-4 py-2 focus:outline-none border"
+/>
+
+</div>
+
         <div
           onClick={(e) => formSubmit()}
           style={{ background: "#303031" }}
