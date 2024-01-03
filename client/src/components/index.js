@@ -5,7 +5,8 @@ import {
   ProtectedRoute,
   AdminProtectedRoute,
   CartProtectedRoute,
-  PageNotFound,
+  Blog,
+  contact,
   ProductDetails,
   ProductByCategory,
   CheckoutPage,
@@ -28,6 +29,16 @@ const Routes = (props) => {
           exact
           path="/products/category/:catId"
           component={ProductByCategory}
+        />
+        <Route
+          exact
+          path="/blog"
+          component={Blog}
+        />
+        <Route
+          exact
+          path="/contact-us"
+          component={contact}
         />
         <CartProtectedRoute
           exact={true}
@@ -78,7 +89,7 @@ const Routes = (props) => {
         {/* User Dashboard End */}
 
         {/* 404 Page */}
-        <Route component={PageNotFound} />
+        {/* <Route component={PageNotFound} /> */}
       </Switch>
     </Router>
   );

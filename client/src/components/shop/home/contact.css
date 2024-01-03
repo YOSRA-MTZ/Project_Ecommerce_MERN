@@ -1,0 +1,88 @@
+/* Utilisez cette classe sur l'élément parent direct du formulaire pour le centrer */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Utilisez 100vh pour centrer verticalement dans toute la fenêtre d'affichage */
+  }
+  
+  /* Si vous utilisez déjà la classe .center, assurez-vous qu'elle est appliquée correctement */
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Assurez-vous que cette hauteur est suffisante pour que votre contenu soit centré verticalement */
+    padding: 20px;
+  }
+  
+  .wrapper {
+    width: 100%; /* Utilisez 100% pour une largeur responsive ou max-width pour une largeur fixe */
+    max-width: 550px; /* La largeur maximale du formulaire */
+    margin: auto; /* Centrer automatiquement dans l'espace disponible */
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .contact-wrap {
+    background: rgba(255, 255, 255, 0.9); /* Fond légèrement transparent */
+    border-radius: 8px;
+    padding: 25px;
+  }
+  
+  /* ... le reste de vos styles ... */
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    .wrapper {
+      margin-top: 0; /* Ajustez ou supprimez la marge supérieure pour les appareils mobiles */
+      padding: 20px;
+    }
+  }
+  
+  /* Titre du formulaire de contact */
+  .contact-wrap h3 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles pour les champs de formulaire */
+  .contactForm .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contactForm .label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+  }
+  
+  .contactForm .form-control {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .contactForm .form-control::placeholder {
+    color: #999;
+  }
+  
+  /* Styles pour le bouton d'envoi */
+  .contactForm .btn-primary {
+    color: #fff;
+    background-color: #020a13;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contactForm .btn-primary:hover {
+    background-color: #020a13;
+  }
+  
