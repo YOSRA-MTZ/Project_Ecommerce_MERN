@@ -113,7 +113,7 @@ export const CheckoutComponent = (props) => {
                       placeholder="+880"
                     />
                   </div>
-                  <DropIn
+                  {/* <DropIn
                     options={{
                       authorization: state.clientToken,
                       paypal: {
@@ -136,7 +136,31 @@ export const CheckoutComponent = (props) => {
                     }
                     className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
                     style={{ background: "#303031" }}
+                  > */}
+                  <DropIn
+                    options={{
+                      authorization: state.clientToken,
+                    }}
+                    onInstance={(instance) => (state.instance = instance)}
+                  />
+
+                  <div
+                    onClick={(e) =>
+                      pay(
+                        data,
+                        dispatch,
+                        state,
+                        setState,
+                        getPaymentProcess,
+                        totalCost,
+                        history
+                      )
+                    }
+                    className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
+                    style={{ background: "#303031" }}
                   >
+                    {/* Contenu du bouton de paiement par carte */}
+
                     Pay now
                   </div>
                 </div>

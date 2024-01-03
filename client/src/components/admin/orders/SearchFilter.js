@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const SearchFilter = (props) => {
   return (
     <Fragment>
-      <div className="rounded-full flex items-center justify-between overflow-hidden">
+      {/* <div className="rounded-full flex items-center justify-between overflow-hidden">
         <span style={{ background: "#303031" }} className="py-2 px-3">
           <svg
             className="rounded-l-full w-6 h-6 text-gray-100"
@@ -23,7 +23,7 @@ const SearchFilter = (props) => {
           className="py-2 px-2 focus:outline-none rounded-r-full w-full"
           type="text"
         />
-      </div>
+      </div> */}
     </Fragment>
   );
 };
